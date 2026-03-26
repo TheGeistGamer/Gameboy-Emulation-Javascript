@@ -91,7 +91,7 @@ export const z80 = {
     z80._map[MMU.rb(z80._r.pc++)]();
     z80._r.pc &= 65535;
     z80._clock.m += z80._r.m; z80._clock.t += z80._r.t;
-    if (MMU_inbios && z80._r.pc == 0x0100) MMU._inbios = 0;
+    if (MMU._inbios && z80._r.pc == 0x0100) MMU._inbios = 0;
   },
 
   // LD r, r  (register to register)
